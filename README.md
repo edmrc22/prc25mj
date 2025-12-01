@@ -53,7 +53,7 @@ We first focused on transforming the raw data into a feature matrix by processin
 
 ### Model Training
 The CatBoost Regressor was trained to specialize in predicting the logarithm of the fuel flow rate, a strategy aimed at stabilizing the target variance and mitigating the influence of extreme values.
-Conversely, the XGBoost Regressor was trained on the complementary task of predicting the raw fuel consumption. This dual-model approach, utilizing different target variables and categorical handling methods, provided diverse predictive inputs for the final ensemble, improving robustness. Hyperparameters were tuned via Optuna and validated using Group K-Fold. This grouping ensures that models are validated on eExplicit Flag (1=Blind, 0=Valid).ntirely unseen flights, not just unseen segments of the same trained flights - a pitfall which we found ourselves in when training and ranking performance showed high discrepancy.
+Conversely, the XGBoost Regressor was trained on the complementary task of predicting the raw fuel consumption. This dual-model approach, utilizing different target variables and categorical handling methods, provided diverse predictive inputs for the final ensemble, improving robustness. Hyperparameters were tuned via Optuna and validated using Group K-Fold. This grouping ensures that models are validated on entirely unseen flights, not just unseen segments of the same trained flights - a pitfall which we found ourselves in when training and ranking performance showed high discrepancy.
 
 ![Alt text](file-hierarchy.png)
 
